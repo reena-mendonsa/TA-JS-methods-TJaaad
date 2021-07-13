@@ -1,35 +1,103 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
-
+function countPeople(acc,curVal){
+  acc=acc+curVal;
+  console.log(acc);
+  return acc + curVal;
+}
 function countAllPeople() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0; j<got.houses[i].people.length;j++){
+    count = got.houses[i].people[j].reduce(countPeople);
+    }
+  }
+  console.log(count);
+  return count;
 }
 
 function peopleByHouses() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    
+    count = got.houses[i].name.reduce(countPeople);
+    
+  }
+  console.log(count);
+  return count;
 }
 
 function everyone() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0; j<got.houses[i].people.length;j++){
+    count = got.houses[i].people[j].reduce(countPeople);
+    }
+  }
+  console.log(count);
+  return count;
 }
 
 function nameWithS() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0; j<got.houses[i].people.length;j++){
+    count = got.houses[i].people[j].reduce(countPeople);
+    }
+  }
+  console.log(count);
+  return count;
 }
 
 function nameWithA() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0; j<got.houses[i].people.length;j++){
+    count = got.houses[i].people[j].reduce(countPeople);
+    }
+  }
+  console.log(count);
+  return count;
 }
 
 function surnameWithS() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0; j<got.houses[i].people.length;j++){
+    count = got.houses[i].people[j].reduce(countPeople);
+    }
+  }
+  console.log(count);
+  return count;
 }
 
 function surnameWithA() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0; j<got.houses[i].people.length;j++){
+    count = got.houses[i].people[j].reduce(countPeople);
+    }
+  }
+  console.log(count);
+  return count;
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let count;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0; j<got.houses[i].people.length;j++){
+    count = got.houses[i].people[j].reduce(countPeople);
+    }
+  }
+  console.log(count);
+  return count;
 }
 
 // Testing your result after writing your function

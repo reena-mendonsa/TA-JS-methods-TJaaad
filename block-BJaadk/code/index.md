@@ -20,7 +20,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-
+![](./img/forEach1.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
@@ -28,7 +28,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-
+![](./img/forEach2.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
@@ -36,7 +36,7 @@ function double(num) {
 }
 let doubleNumbers = numbers.map(double);
 ```
-
+![](./img/map1.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
@@ -44,7 +44,7 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
-
+![](./img/map2.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
@@ -52,7 +52,7 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
-
+![](./img/map3.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
@@ -60,7 +60,7 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
-
+![](./img/map3.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function isOdd(num) {
@@ -68,7 +68,7 @@ function isOdd(num) {
 }
 let oddNumbers = numbers.filter(isOdd);
 ```
-
+![](./img/filter1.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function test(num) {
@@ -76,7 +76,7 @@ function test(num) {
 }
 let filteredNumbers = numbers.filter(test);
 ```
-
+![](./img/filter2.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function test(num) {
@@ -84,7 +84,7 @@ function test(num) {
 }
 let filteredNumbers = numbers.filter(test);
 ```
-
+![](./img/filter3.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
@@ -92,7 +92,7 @@ function add(accumulator, currentValue) {
 }
 let sum = numbers.reduce(add);
 ```
-
+![](./img/reduce.jpg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
@@ -100,3 +100,4 @@ function add(accumulator, currentValue) {
 }
 let sum = numbers.reduce(add);
 ```
+![](./img/reduce.jpg)
