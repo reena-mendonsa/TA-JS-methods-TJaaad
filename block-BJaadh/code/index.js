@@ -29,9 +29,14 @@ stringsClone=[...strings];
 stringsClone.shift();
 // - Find all the words that contain 'is' use string method 'includes'
 console.log(strings.includes('is'));
+let allIs =strings.filter((string) => string.includes("is"));
 // - Find all the words that contain 'is' use string method 'indexOf'
 let index=strings.indexOf('is');
 console.log(strings[index]);
+//other way
+let allISAgain = strings.filter(
+  (string)=>string.indexOf("is") !== -1
+);
 // - Check if all the numbers in numbers array are divisible by three use 
 //array method (every)
 function isDivisibleBy3(num){
@@ -39,6 +44,7 @@ function isDivisibleBy3(num){
     return num%3==0;
 }
 console.log(numbers.every(isDivisibleBy3),`divisble by3`);
+
 // -  Sort Array from smallest to largest
 let numbersSort =[...numbers];
 numbersSort.sort(function(a, b) {
@@ -54,6 +60,9 @@ var max = numbers.reduce(function(a, b) {
 });
 
 console.log(max);
+//other way
+let largest = numbers.sort((a,b)=>a-b).pop();
+
 // - Find longest string in strings
 let longestStr= strings.reduce(function(a,b){
    return a.length > b.length ? a : b;
@@ -107,13 +116,35 @@ var customers = [
   { firstname: 'Jack', lastname: 'White' },
 ];
 // - Find all customers whose firstname starts with 'J'
-
+let filterCust = customers.filter((customer)=>
+custimer.firstname.startsWith("J"));
 // - Create new array with only first name
-let firstName = ['Joe','John','Dave','Jack'];
+let firstNameCust = customers.map(
+  (customer)=>customers.firstname
+);
 // - Create new array with all the full names (ex: "Joe Blogs")
-let fullName = ['Joe Blogs','John Smith','Dave Jones','Jack White'];
+let fullName = customers.map(
+  (customer)=>
+   `${customers.firstname} ${customers.lastname}`
+);
+
 // - Sort the array created above alphabetically
-fullName.sort();
+[...fullName].sort();
 // - Create a new array that contains only user who has at least one
 // vowel in the firstname.
-let user=['Joe','John','Dave','Jack'];
+let vowel = customers.filter((customer)=>
+{
+  if(
+    customer.firstname.toLowerCase().includes("a") ||
+    customer.firstname.toLowerCase().includes("e") ||
+    customer.firstname.toLowerCase().includes("i") ||
+    customer.firstname.toLowerCase().includes("o") ||
+    customer.firstname.toLowerCase().includes("u") 
+  )
+  {
+    return true;
+  }
+  else{
+    return false;
+  }
+});
