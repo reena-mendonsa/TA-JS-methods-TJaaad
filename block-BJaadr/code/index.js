@@ -1,103 +1,105 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
-function countPeople(acc,curVal){
-  acc=acc+curVal;
-  console.log(acc);
-  return acc + curVal;
-}
 function countAllPeople() {
   // your code goes here
-  let count;
+  let count=0;
   for(let i=0;i<got.houses.length;i++){
-    for(let j=0; j<got.houses[i].people.length;j++){
-    count = got.houses[i].people[j].reduce(countPeople);
-    }
+  
+     count= count+got.houses[i].people.length;
+    
   }
-  console.log(count);
+  // console.log(count);
   return count;
 }
 
 function peopleByHouses() {
   // your code goes here
-  let count;
-  for(let i=0;i<got.houses.length;i++){
+   let housePeople ={};
+   for(let i=0;i<got.houses.length;i++){
     
-    count = got.houses[i].name.reduce(countPeople);
     
-  }
-  console.log(count);
-  return count;
-}
+    housePeople[`${got.houses[i].name}`] = got.houses[i].people.length;
+   }
+   
+   return housePeople;
+ }
 
 function everyone() {
   // your code goes here
-  let count;
+  let every=[];
   for(let i=0;i<got.houses.length;i++){
-    for(let j=0; j<got.houses[i].people.length;j++){
-    count = got.houses[i].people[j].reduce(countPeople);
+    for(let j=0;j<got.houses[i].people.length;j++){
+      every.push(got.houses[i].people[j].name);
     }
   }
-  console.log(count);
-  return count;
-}
+  return every;
+ }
 
 function nameWithS() {
-  // your code goes here
-  let count;
+  let nameWithS=[];
   for(let i=0;i<got.houses.length;i++){
-    for(let j=0; j<got.houses[i].people.length;j++){
-    count = got.houses[i].people[j].reduce(countPeople);
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.includes('S')==true){
+      nameWithS.push(got.houses[i].people[j].name);
+      }
     }
   }
-  console.log(count);
-  return count;
-}
+  return nameWithS;
+ }
 
 function nameWithA() {
   // your code goes here
-  let count;
+  let nameWithA=[];
   for(let i=0;i<got.houses.length;i++){
-    for(let j=0; j<got.houses[i].people.length;j++){
-    count = got.houses[i].people[j].reduce(countPeople);
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.includes('a')==true){
+      nameWithA.push(got.houses[i].people[j].name);
+      }
     }
   }
-  console.log(count);
-  return count;
-}
+  return nameWithA;
+ }
 
 function surnameWithS() {
   // your code goes here
-  let count;
+  let surnameS=[] ,index;
   for(let i=0;i<got.houses.length;i++){
-    for(let j=0; j<got.houses[i].people.length;j++){
-    count = got.houses[i].people[j].reduce(countPeople);
+    for(let j=0;j<got.houses[i].people.length;j++){
+        index =got.houses[i].people[j].name.lastIndexOf('S');
+        if(index >0 ){
+         surnameS.push(got.houses[i].people[j].name);
+        }
     }
   }
-  console.log(count);
-  return count;
-}
+  return surnameS;
+ }
 
 function surnameWithA() {
   // your code goes here
-  let count;
+  let surnameA=[] ,index;
   for(let i=0;i<got.houses.length;i++){
-    for(let j=0; j<got.houses[i].people.length;j++){
-    count = got.houses[i].people[j].reduce(countPeople);
+    for(let j=0;j<got.houses[i].people.length;j++){
+        index =got.houses[i].people[j].name.lastIndexOf('A');
+        if(index >0 ){
+         surnameA.push(got.houses[i].people[j].name);
+        }
     }
   }
-  console.log(count);
-  return count;
-}
+  return surnameA;
+ }
 
 function peopleNameOfAllHouses() {
   // your code goes here
-  let count;
+  let AllhousePeople ={} ;
   for(let i=0;i<got.houses.length;i++){
-    for(let j=0; j<got.houses[i].people.length;j++){
-    count = got.houses[i].people[j].reduce(countPeople);
-    }
+    let people =[];
+   for(let j=0;j<got.houses[i].people.length;j++){
+     
+      people.push(got.houses[i].people[j].name);
+   }
+   AllhousePeople[`${got.houses[i].name}`]= people;
   }
-  console.log(count);
-  return count;
+  
+  return AllhousePeople;
 }
 
 // Testing your result after writing your function
