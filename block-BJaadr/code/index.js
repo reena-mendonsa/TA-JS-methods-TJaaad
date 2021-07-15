@@ -2,34 +2,109 @@
 
 function countAllPeople() {
   // your code goes here
-}
+  let count =0;
+ for(let i=0;i<got.houses.length;i++){
+  
+   count= count+got.houses[i].people.length;
+     // count = got.houses.people.reduce((elm) => elm.length+count) ;
+  }
+ 
+  
+  return count;
 
+}
 function peopleByHouses() {
   // your code goes here
+  let housePeople ={};
+  for(let i=0;i<got.houses.length;i++){
+   
+   
+   housePeople[`${got.houses[i].name}`] = got.houses[i].people.length;
+  }
+  
+  return housePeople;
 }
 
 function everyone() {
   // your code goes here
+
+  let every=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      every.push(got.houses[i].people[j].name);
+    }
+  }
+  return every;
 }
 
 function nameWithS() {
   // your code goes here
+  let nameWithS=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.includes('S')==true){
+      nameWithS.push(got.houses[i].people[j].name);
+      }
+    }
+  }
+  return nameWithS;
+
 }
 
 function nameWithA() {
   // your code goes here
+  let nameWithA=[];
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+      if(got.houses[i].people[j].name.includes('a')==true){
+      nameWithA.push(got.houses[i].people[j].name);
+      }
+    }
+  }
+  return nameWithA;
 }
 
 function surnameWithS() {
   // your code goes here
+  let surnameS=[] ,index;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+        index =got.houses[i].people[j].name.lastIndexOf('S');
+        if(index >0 ){
+         surnameS.push(got.houses[i].people[j].name);
+        }
+    }
+  }
+  return surnameS;
 }
 
 function surnameWithA() {
   // your code goes here
+  let surnameA=[] ,index;
+  for(let i=0;i<got.houses.length;i++){
+    for(let j=0;j<got.houses[i].people.length;j++){
+        index =got.houses[i].people[j].name.lastIndexOf('A');
+        if(index >0 ){
+         surnameA.push(got.houses[i].people[j].name);
+        }
+    }
+  }
+  return surnameA;
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let AllhousePeople ={} ;
+  for(let i=0;i<got.houses.length;i++){
+    let people =[];
+   for(let j=0;j<got.houses[i].people.length;j++){
+     
+      people.push(got.houses[i].people[j].name);
+   }
+   AllhousePeople[`${got.houses[i].name}`]= people;
+  }
+  
+  return AllhousePeople;
 }
 
 // Testing your result after writing your function
