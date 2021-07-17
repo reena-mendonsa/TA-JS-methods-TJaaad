@@ -33,15 +33,15 @@ console.log(avgGrade());
 
 function avgGradeMale(){
   let gradeM=persons.filter((p)=>p.sex=='M');
- let sum= persons.reduce((acc,person)=> {
-    acc = acc + gradeM.grade;
+ let sum= gradeM.reduce((acc,cv)=> {
+    acc = acc + cv.grade;
     
   
   return acc;
  },0);
-   console.log(sum);
-  //  let gradeM = persons.map((p)=> p.grade).filter((p)=> p.sex==='M');
-   console.log(gradeM);
+   
+  
+  
   return sum/gradeM.length;
 }
 console.log(avgGradeMale());
@@ -50,8 +50,8 @@ console.log(avgGradeMale());
 // Find the average grade of female
 function avgGradeFemale(){
   let gradeF= persons.filter((p)=> p.sex=='F');
- let sum= persons.reduce((acc,person)=> {
-    acc = acc + gradeF.grade;
+ let sum= gradeF.reduce((acc,cv)=> {
+    acc = acc + cv.grade;
     
   
   return acc;
@@ -208,16 +208,16 @@ Create these functions which accepts a number value and returns a number value:
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
 
-// let pipeline = [
-//   increment,
-//   double,
-//   decrement,
-//   decrement,
-//   double,
-//   triple,
-//   half
+let pipeline = [
+  increment,
+  double,
+  decrement,
+  decrement,
+  double,
+  triple,
+  half
   
-// ];
+];
 
 /*
 Using the pipeline variable that contains the collection of functions, taking the initial value 3 find the output.
@@ -233,28 +233,28 @@ EXAMPLE:
   ...
 */
 
-// let pipeline2 = [
-//   increment,
-//   half,
-//   double,
-//   decrement,
-//   decrement,
-//   triple,
-//   double,
-//   triple,
-//   half,
-//   increment,
-//   triple
-// ];
+let pipeline2 = [
+  increment,
+  half,
+  double,
+  decrement,
+  decrement,
+  triple,
+  double,
+  triple,
+  half,
+  increment,
+  triple
+];
 
 // Find the output using pipeline2 the initial value if 8
-let val;
-val=function increment(num){
+
+function increment(num){
   num = num +1;
   return num;
 }
 
-console.log(increment(8),val);
+
 
 
  function half(num){
@@ -262,29 +262,39 @@ console.log(increment(8),val);
   return num;
 }
 
-console.log('half',val);
 
-val = function double(num){
+
+function double(num){
   num = num * 2 ;
   return num;
 }
 
-console.log('double',val);
 
-val = function decrement(num){
+
+function decrement(num){
   num = num -1;
   return num;
 }
 
-console.log('decrement',val);
 
 
 
-val = function triple(num){
+
+function triple(num){
   num = num *3;
   return num;
 }
 
-console.log('triple',val);
 
 
+
+pipeline.reduce((acc,cv)=>{
+acc = cv(acc);
+return acc;
+},3);
+
+pipeline2.reduce((acc,cv)=>{
+  acc = cv(acc);
+  return acc;
+  },8);
+  
